@@ -12218,7 +12218,7 @@ nav#sidebar.shrinked .sidebar-header .title {
 *     LOGIN PAGE
 * ==========================================================
 */
-.login-page {
+.login-page, .login-admin-page {
   position: relative;
 }
 
@@ -12235,8 +12235,21 @@ nav#sidebar.shrinked .sidebar-header .title {
   right: 0;
   bottom: 0;
 }
+.login-admin-page::before{
+  content: "";
+  display: block;
+  z-index: -1;
+  background: url(../img/photos/victor-ene-1301123-unsplash.jpg);
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
-.login-page .container {
+.login-page .container, .login-admin-page .container {
   min-height: 100vh;
   z-index: 999;
 }
@@ -12246,8 +12259,14 @@ nav#sidebar.shrinked .sidebar-header .title {
   color: #fff;
 }
 
+.login-admin-page .info {
+  background-color: var(--bs-purple);
+  opacity: 0.95;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
-  .login-page .info {
+  .login-page .info, .login-admin-page .info {
     min-height: 70vh;
   }
 }
