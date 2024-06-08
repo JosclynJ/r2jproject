@@ -1,0 +1,29 @@
+.container {
+    width: 400px; /* Mengatur lebar container menjadi 400 px */
+    border: 1px solid black; /* Menambahkan border 1 px dengan warna hitam */
+    display: flex;
+    flex-direction: row; /* Tata letak baris */
+    justify-content: space-between; /* Menyebarkan item secara merata */
+    align-items: center; /* Menengahkan item pada poros silang */
+}
+
+.box {
+    width: 100; /* Mengatur lebar kotak menjadi 100 px */
+    height: 100px; /* Mengatur tinggi kotak menjadi 100 px */
+    padding: 20px; /* Memberi jarak antara isi dan batas kotak 20 px */
+    border: 2px solid blue; /* Menambahkan border 2 px dengan warna biru */
+    background-color: skyblue; /* Mengubah warna latar belakang menjadi biru muda */
+    margin: 10px; /* Memberi jarak antara kotak dengan elemen lain di sekitarnya sebesar 10 px */
+    box-sizing: border-box; /* Mengatur box-sizing agar padding dan border tidak mempengaruhi ukuran kotak */
+    overflow: auto; /* Menambahkan scrollbar jika konten melebihi ukuran box */
+    flex: 1; /* Item menyesuaikan ukuran */
+    margin: 10px; /* Ruang antara item */
+}
+
+.left {
+    float: left; /* Mengatur elemen agar mengapung ke kiri */
+}
+
+.right {
+    float: right; /* Mengatur elemen agar mengapung ke kanan */
+}

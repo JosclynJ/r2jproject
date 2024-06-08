@@ -1,0 +1,29 @@
+* {
+    font-family: Poppins;
+}
+
+.login-gradient-custom {
+	background: -webkit-linear-gradient(bottom, #6A11CB, #2575FC)
+}
+
+.register-gradient-custom {
+	background: -webkit-linear-gradient(bottom, #28a745, #a6f77b)
+}
+
+.container{
+    width: 35vw;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 1) !important
+}
+
+.input-group-text {
+    color: #6e707e;
+    background-color: #eaecf4;
+}
+
+.text-small {
+    font-size: 0.8rem;
+}

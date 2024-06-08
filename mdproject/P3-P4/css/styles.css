@@ -1,0 +1,46 @@
+body {
+    font-family: Poppins; /* Mengubah jenis font */
+}
+
+.container {
+    text-align: center; /* Mengubah teks menjadi rata tengah */
+}
+
+h1 {
+    color: #333; /* Mengarut warna teks menjadi abu-abu tua */
+    font-size: 36px; /* Mengatur ukuran font menjadi 36px */
+    margin-top: 100px; /* Memberikan margin atas pada h1 */
+}
+
+.biru {
+    color: #007bff; /* Mengatur warna teks menjadi biru */
+    font-size: 24px; /* Mengatur ukuran font menjadi 24px */
+}
+
+.hijau {
+    color: #28a745; /* Mengatur warna teks menjadi hijau */
+    font-size: 26px; /* Mengatur ukuran font menjadi 26px */
+}
+
+.oranye {
+    color: #fd7e14; /* Mengatur warna teks menjadi oranye */
+    font-size: 28px; /* Mengatur ukuran font menjadi 28px */
+}
+
+.ungu {
+    color: #6f42c1; /* Mengatur warna teks menjadi ungu */
+    font-size: 30px; /* Mengatur ukuran font menjadi 30px */
+}
+
+span {
+    font-weight: bold; /* Mengubah font dalam span menjadi tebal */
+}
+
+footer {
+    opacity: 50%;
+    margin-bottom: 20px;
+    text-align: center; /* Teks di tengah */
+    position: fixed; /* Footer tetap di bagian bawah layar */
+    bottom: 0; /* Footer menempel di bagian bawah */
+    width: 100%; /* Lebar footer mengisi seluruh lebar layar */  
+}

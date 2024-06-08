@@ -1,0 +1,58 @@
+/* Selektor untuk elemen body */
+body{
+    font-family: Poppins; /* Mengubah jenis font*/
+    background-color: lightsteelblue; /* Mengubah warna latar belakang */
+}
+
+/* Selektor untuk semua elemen h1 */
+h1 {
+    color: darkred; /* Mengubah warna teks */
+    text-align: center; /* Mengubah teks menjadi rata tengah */
+}
+
+/* Selektor untuk kelas logo*/
+.logo {
+    display: flex; /* Menggunakan flexbox untuk mengatur tata letak */
+    justify-content: center; /* Menengahkan horizontal */
+}
+
+/* Selektor untuk elemen img dalam kelas logo*/
+.logo img {
+    border-radius: 50%; /* Membuat sudut menjadi bulat */
+    max-width: 250px; /* Mengatur batas lebar gambar */
+    max-height: 250px; /* Mengatur batas tinggi gambar */
+    margin: 20px; /* Mengatur margin */
+}
+
+/* Selektor untuk kelas teks */
+.teks{
+    font-size: large; /* Membuat ukuran font menjadi large atau besar */
+    font-weight: bold;
+}
+
+/* Selektor untuk kelas rata-kiri */
+.rata-kiri{
+    text-align: left; /* Membuat teks menjadi rata kiri */
+    color: purple; /* Mengubah warna text menjadi ungu */
+}
+
+/* Selektor untuk kelas rata-tengah */
+.rata-tengah{
+    text-align: center; /* Membuat teks menjadi rata tengah */
+    color: blue; /* Mengubah warna text menjadi biru */
+}
+
+/* Selektor untuk kelas rata-kanan */
+.rata-kanan {
+    text-align: right; /* Membuat teks menjadi rata kanan */
+    color: green; /* Mengubah warna text menjadi hijau */
+}
+
+footer {
+    opacity: 50%;
+    margin-bottom: 20px;
+    text-align: center; /* Teks di tengah */
+    position: fixed; /* Footer tetap di bagian bawah layar */
+    bottom: 0; /* Footer menempel di bagian bawah */
+    width: 100%; /* Lebar footer mengisi seluruh lebar layar */  
+}
