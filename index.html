@@ -23,6 +23,8 @@
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Notifikasi -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Font -->
     <script src="https://kit.fontawesome.com/74760b9276.js" crossorigin="anonymous"></script>
@@ -44,14 +46,6 @@
                   <use xlink:href="#real-estate-1"> </use>
                 </svg><span>Home </span></a>
               </li>
-        </ul>
-        <span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Extras</span>
-        <ul class="list-unstyled">
-          <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-            <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-              <use xlink:href="#disable-1"> </use>
-            </svg><span>Logout </span></a>
-          </li>
         </ul>
       </nav>
       <div class="page-content">
@@ -215,7 +209,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       loadData();
       function loadData() {
-        fetch('https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c')
+        fetch('https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae')
           .then(response => response.json())
           .then(data => {
             const tableBody = document.querySelector("#mahasiswa-table tbody");
@@ -256,14 +250,14 @@
         document.getElementById('createForm').addEventListener('submit', function(event) {
           event.preventDefault();
           const nim = document.getElementById('createAccount').value;
-          fetch('https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c', {
+          fetch('https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
               NIM: nim,
-              Password: nim // Password di-set sama dengan NIM
+              Password: nim // Password sama dengan NIM
             })
           })
           .then(response => response.json())
@@ -285,9 +279,10 @@
             });
           });
         });
+        
         // Fungsi info mahasiswa
         window.loadBiodata = function(nim) {
-          fetch(`https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c?NIM=${nim}`)
+          fetch(`https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae?NIM=${nim}`)
             .then(response => response.json())
             .then(data => {
               if (data.length > 0) {
@@ -309,9 +304,10 @@
               console.error('Error:', error);
             });
           }
+          
           // Fungsi edit akun
           window.editMahasiswa = function(nim) {
-            fetch(`https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c?NIM=${nim}`)
+            fetch(`https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae?NIM=${nim}`)
               .then(response => response.json())
               .then(data => {
                 if (data.length > 0) {
@@ -335,7 +331,7 @@
             const nim = document.getElementById('editNIM').value;
             const password = document.getElementById('editPassword').value;
 
-            fetch(`https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c/NIM/${nim}`, { // Gunakan path parameter untuk nim
+            fetch(`https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae/NIM/${nim}`, { // Gunakan path parameter untuk nim
               method: 'PATCH',
               headers: {
                 'Content-Type': 'application/json'
@@ -368,6 +364,8 @@
               });
             });
           });
+
+          // Fungsi untuk menghapus mahasiswa
           window.deleteMahasiswa = function(nim) {
             Swal.fire({
                 title: 'Apakah anda yakin?',
@@ -380,7 +378,7 @@
             })
             .then((result) => {
               if (result.isConfirmed) {
-                fetch(`https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c/NIM/${nim}`, {
+                fetch(`https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae/NIM/${nim}`, {
                   method: 'DELETE'
                 })
                 .then(response => response.json())
@@ -403,7 +401,6 @@
               }
             });
       }
-        
       });
     </script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->

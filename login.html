@@ -32,7 +32,7 @@
               <div class="col-lg-6">
                 <div class="info d-flex justify-content-center flex-column p-4 h-100">
                   <div class="py-5">
-                    <h1 class="display-6 fw-bold">Dashboard - Mahasiswa</h1>
+                    <h1 class="display-6 fw-bold">Dashboard</h1>
                     <p class="fw-light mb-0">Selamat datang di biodata mahasiswa.</p>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
               <!-- Form Panel -->
               <div class="col-lg-6 bg-white">
                 <div class="d-flex align-items-center px-4 px-lg-5 h-100 bg-dash-dark-2">
-                  <form class="login-form py-5 w-100" method="get" action="dashboard_mhs.html">
+                  <form class="login-form py-5 w-100" method="get" action="dashboard.html">
                     <div class="input-material-group mb-3">
                       <input class="input-material" id="login-username" type="text" name="loginUsername" autocomplete="off" required data-validate-field="loginUsername">
                       <label class="label-material" for="login-username">Username</label>
@@ -49,7 +49,7 @@
                       <input class="input-material" id="login-password" type="password" name="loginPassword" required data-validate-field="loginPassword">
                       <label class="label-material" for="login-password">Password</label>
                     </div>
-                    <button class="btn btn-primary mb-3" id="login" type="submit">Login</button><br><small class="text-gray-500">Login sebagai admin: </small><a class="text-sm text-paleBlue" href="login_admin.html">Login</a>
+                    <button class="btn btn-primary mb-3" id="login" type="submit">Login</button>
                   </form>
                 </div>
               </div>
@@ -106,16 +106,16 @@
               const password = document.getElementById('login-password').value.trim();
 
               // Kirim permintaan ke API untuk memeriksa kredensial
-                fetch('https://sheet.best/api/sheets/e0516a26-b62e-42fe-8ac9-c86a92a17f4c')
+                fetch('https://sheet.best/api/sheets/7efe2fef-d9a7-454b-82b2-bd0c0853b1ae')
                   .then(response => response.json())
                   .then(data => {
                       const user = data.find(user => user.NIM === username && user.Password === password);
                       if (user) {
-                          // Kredensial cocok, redirect ke dashboard_mhs.html
+                          // Kredensial cocok, redirect ke dashboard.html
                           // Simpan username pengguna ke local storage
                           localStorage.setItem('username', username);
                           alert('Anda berhasil login')
-                          window.location.href = 'dashboard_mhs.html';
+                          window.location.href = 'dashboard.html';
                       } else {
                           // Kredensial tidak cocok, tampilkan pesan kesalahan
                           console.log('Login failed:', { username, password });
