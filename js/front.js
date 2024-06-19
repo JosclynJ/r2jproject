@@ -5,28 +5,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Transition Placeholders
     // ------------------------------------------------------ //
     let materialInputs = document.querySelectorAll("input.input-material");
-    let materialLabel = document.querySelectorAll("label.label-material");
-
-    // activate labels for prefilled values
-    let filledMaterialInputs = Array.from(materialInputs).filter(function (input) {
-        return input.value !== "";
+    // Activate labels for prefilled values
+    materialInputs.forEach((input) => {
+        if (input.value !== "") {
+            input.parentElement.querySelector("label.label-material").classList.add("active");
+        }
     });
-    filledMaterialInputs.forEach((input) => input.parentElement.lastElementChild.setAttribute("class", "label-material active"));
 
-    // move label on focus
+      // Move label on focus
     materialInputs.forEach((input) => {
         input.addEventListener("focus", function () {
-            input.parentElement.lastElementChild.setAttribute("class", "label-material active");
+            input.parentElement.querySelector("label.label-material").classList.add("active");
         });
     });
 
-    // remove/keep label on blur
+      // Remove/keep label on blur
     materialInputs.forEach((input) => {
         input.addEventListener("blur", function () {
             if (input.value !== "") {
-                input.parentElement.lastElementChild.setAttribute("class", "label-material active");
+                input.parentElement.querySelector("label.label-material").classList.add("active");
             } else {
-                input.parentElement.lastElementChild.setAttribute("class", "label-material");
+                input.parentElement.querySelector("label.label-material").classList.remove("active");
             }
         });
     });

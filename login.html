@@ -18,11 +18,12 @@
   <!-- Favicon-->
   <link rel="shortcut icon" href="img/favicon.ico">
   <script src="https://kit.fontawesome.com/74760b9276.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Tweaks for older IEs--><!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-<body>
+<body style="font-family: Poppins;">
   <div class="login-page">
     <div class="container d-flex align-items-center position-relative py-5">
       <div class="card shadow-sm w-100 rounded overflow-hidden bg-none">
@@ -49,8 +50,8 @@
                     <input class="input-material" id="login-password" type="password" name="loginPassword" required data-validate-field="loginPassword">
                     <label class="label-material" for="login-password">Password</label>
                   </div>
-                  <button class="btn btn-primary mb-3" id="login" type="submit">Login</button>
-                  <a href="lupa-password.html" class="text-danger float-end">Lupa Password</a>
+                  <button class="btn btn-primary" id="login" type="submit">Login</button> <br>
+                  <a href="forgot_pass.html" class="text-sm text-paleBlue float-end">Lupa Password?</a>
                 </form>
               </div>
             </div>
@@ -89,18 +90,34 @@
                   if (user) {
                       // Kredensial cocok, redirect ke dashboard.html
                       // Simpan username pengguna ke local storage
-                      localStorage.setItem('username', username);
-                      alert('Anda berhasil login');
-                      window.location.href = 'dashboard.html';
+                      Swal.fire({
+                        title: "Sukses!",
+                        text: "Anda berhasil login!",
+                        icon: "success"
+                      })
+                      .then((result) => {
+                        if (result.isConfirmed) {
+                            localStorage.setItem('username', username);
+                            window.location.href = 'dashboard.html';
+                        }
+                      });
                   } else {
                       // Kredensial tidak cocok, tampilkan pesan kesalahan
                       console.log('Login failed:', { username, password });
-                      alert('Username atau password salah.');
+                      Swal.fire({
+                        title: "Gagal!",
+                        text: "Username atau password salah!",
+                        icon: "error"
+                      });
                   }
               })
               .catch(error => {
                   console.error('Error:', error);
-                  alert('Terjadi kesalahan saat melakukan autentikasi.');
+                  Swal.fire({
+                        title: "Gagal!",
+                        text: "Terjadi kesalahan saat melakukan autentikasi.",
+                        icon: "error"
+                      });
               });
         });
     });
